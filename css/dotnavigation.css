@@ -1,0 +1,99 @@
+/* Common styles and resets */
+
+
+@media only screen and (min-width: 1200px) {
+    .dotstyle ul {
+        position: relative;
+        padding: 5em 0 0 0;
+	    list-style: none;
+    	cursor: default;
+    	-webkit-touch-callout: none;
+    	-webkit-user-select: none;
+    	-khtml-user-select: none;
+    	-moz-user-select: none;
+    	-ms-user-select: none;
+        user-select: none;
+    }
+
+
+ 
+.dotstyle li {
+	position: relative;
+	margin: 0 0 16px 16px;
+	width: 13px;
+	height: 13px;
+    cursor: pointer;
+    display: block;
+}
+
+@media only screen and (max-width: 768px) {
+    .dotstyle li {
+        visibility: hidden;
+    }
+}
+
+.dotstyle li a {
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	outline: none;
+	border-radius: 50%;
+	background-color: #fff;
+	background-color: rgba(255, 255, 255, 0.3);
+	text-indent: -999em; /* make the text accessible to screen readers */
+	cursor: pointer;
+	position: absolute;
+}
+
+.dotstyle li a:focus {
+	outline: none;
+}
+
+.dotstyle-fall li::after {
+	content: '';
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	visibility: hidden;
+	opacity: 0;
+	left: 0;
+	background-color: #05cd97;
+	border-radius: 50%;
+	-webkit-transform: translateY(-200%);
+	transform: translateY(-200%);
+	-webkit-transition: -webkit-transform 0.3s ease, opacity 0.3s ease, visibility 0s 0.3s;
+	transition: transform 0.3s ease, opacity 0.3s ease, visibility 0s 0.3s;
+}
+
+
+.dotstyle-fall li a {
+	-webkit-transition: -webkit-transform 0.3s ease, opacity 0.3s ease, background-color 0.3s ease;
+	transition: transform 0.3s ease, opacity 0.3s ease, background-color 0.3s ease;
+}
+
+.dotstyle-fall li:hover a,
+.dotstyle-fall li a:focus,
+.dotstyle-fall li.current a {
+	background-color: #fff;
+}
+
+.dotstyle-fall li a.active {
+	background-color: #05cd97;
+}
+
+.dotstyle-fall li.current::after {
+	opacity: 1;
+	visibility: visible;
+	-webkit-transition: -webkit-transform 0.3s ease, opacity 0.3s ease;
+	transition: transform 0.3s ease, opacity 0.3s ease;
+	-webkit-transform: translateY(0%);
+	transform: translateY(0%);
+}
+
+.dotstyle-fall li.current a {
+	opacity: 0;
+	-webkit-transform: translateY(200%);
+	transform: translateY(200%);
+}
+}
