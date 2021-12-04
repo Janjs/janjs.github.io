@@ -47,6 +47,10 @@ a:focus {
   text-decoration: none !important;
 }
 
+#source-dragon {
+  display: none;
+}
+
 h1 {
   color: #2aa2a4;
   font-family: "Work Sans", sans-serif;

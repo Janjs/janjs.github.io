@@ -103,7 +103,7 @@
 					<!--<div class="col-md-4 animate-box" data-animate-effect="fadeInLeft">
 						<img class="img-responsive" src="assets/images/homeimage.jpeg" alt="Jan Jimenez Serra">
 					</div>-->
-					<div class="col-md-7 animate-box" data-animate-effect="fadeInLeft">
+					<div class="col-md-7 animate-box" data-animate-effect="fadeInLeft" id="canvas-container">
 						<h6>Hi, my name is Jan Jiménez Serra and I'm a...</h6>
 						<h1 class="fh4co-heading"><b>Software Engineer</b>, Augmented Reality and Machine Learning enthusiast</h1>
 						<p style="padding-bottom: 2em;">...based in Dublin 🇮🇪 and Arnhem 🇳🇱, and originally from
@@ -118,15 +118,21 @@
 							<p><a href="portfolio.html" class="btn btn-primary">my portfolio</a></p>
 						</div>
 					</div>
-					<div class="col-md-5 animate-box" data-animate-effect="fadeInRight">
+					<div class="col-md-5 animate-box" data-animate-effect="fadeInRight" style="text-align: center;">
 						<!-- 
 						style="padding: 40px; z-index: -5; position: absolute; right:40%; top:20px" -->
 						<div id="next-to-canvas">
 
 						</div>
-						<canvas width="300" height="300" style="background-color: #5cb85c;" id="scene3d"></canvas>
-						<a style="font-size: 12px; text-align: center;" href="portfolio.html">3D reconstruction made with <b>3D Copy
-								& Paste</b></a>
+						<div id="canvas-cotainer">
+							<canvas onmouseenter="showSource()" onmouseleave="hideSource()" width="300" height="300"
+								style="background-color: #5cb85c;" id="scene3d"></canvas>
+						</div>
+						<div id="source-dragon">
+							<a id=style="font-size: 12px; text-align: center;" href="portfolio.html">3D
+								reconstruction made with <b>3D Copy
+									& Paste</b></a>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -331,6 +337,15 @@
 				}
 			});
 		});
+
+		function showSource() {
+			let dragon = document.getElementById("source-dragon");
+			dragon.style.display = "block";
+		}
+		function hideSource() {
+			let dragon = document.getElementById("source-dragon");
+			dragon.style.display = "none";
+		}
 	</script>
 
 	<!-- MAIN JS -->

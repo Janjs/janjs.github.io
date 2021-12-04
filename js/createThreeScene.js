@@ -27,11 +27,10 @@ function init() {
   loader.load('../assets/dragonbcn.glb', function (gltf) {
     car = gltf.scene.children[0];
     car.scale.set(1, 1, 1);
-    setTimeout(function () {
-      scene.add(gltf.scene);
-    }, 1000);
+    scene.add(gltf.scene);
     animate();
   })
+
 
   directionalLight = new THREE.DirectionalLight(0xffffff, 3);
   directionalLight.position.set(0, 1, 0);
