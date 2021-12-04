@@ -54,6 +54,9 @@
 	<!--[if lt IE 9]>
 	<script src="js/respond.min.js"></script>
 	<![endif]-->
+	<script src="./js/three/three.min.js"></script>
+	<script src="./js/three/GLTFLoader.js"></script>
+	<script src="./js/three/OrbitControls.js"></script>
 
 </head>
 
@@ -103,20 +106,22 @@
 					<div class="col-md-7 animate-box" data-animate-effect="fadeInLeft">
 						<h6>Hi, my name is Jan Jiménez Serra and I'm a...</h6>
 						<h1 class="fh4co-heading"><b>Software Engineer</b>, Augmented Reality and Machine Learning enthusiast</h1>
-						<p style="padding-bottom: 2em;">...based in Dublin 🇮🇪 and Arnhem (Netherlands) 🇳🇱, and originally from
+						<p style="padding-bottom: 2em;">...based in Dublin 🇮🇪 and Arnhem 🇳🇱, and originally from
 							Barcelona 🇪🇸. <br />Recently graduated with distinction as an M.Sc.
-							in Computer Science at <i>Trinity College Dublin</i>.<br /> Professional experience building
-							<b>Full-stack Web Applications</b> and Augmented Reality experiences enhanced with Machine
-							Learning.
+							in Computer Science at <i>Trinity College Dublin</i> 🏛️
+							.<br /> Professional experience building
+							<b>Full-stack Web Applications</b> 💻 and Augmented Reality 👓 experiences enhanced with Machine
+							Learning 🧠.
 						</p>
 						<div class="col-md-6 col-md-offset-3 col-md-pull-3" style="padding-left: 0px !important;"
 							data-animate-effect="fadeInLeft">
 							<p><a href="portfolio.html" class="btn btn-primary">my portfolio</a></p>
 						</div>
 					</div>
-					<div class="col-md-4 animate-box" data-animate-effect="fadeInLeft" style="padding: 40px;">
-						<img class="img-responsive" src="assets/images/img-me.png" alt="Jan Jimenez Serra"
-							style="border-radius: 5px;">
+					<div class="col-md-4 animate-box" data-animate-effect="fadeInRight">
+						<!-- 
+						style="padding: 40px; z-index: -5; position: absolute; right:40%; top:20px" -->
+						<canvas width="300" height="300" style="background-color: #5cb85c;" id="scene3d"></canvas>
 					</div>
 				</div>
 			</div>
@@ -325,6 +330,9 @@
 
 	<!-- MAIN JS -->
 	<script src="js/main.js"></script>
+
+	<!-- Import Dragon -->
+	<!-- <script src="js/createThreeScene.js"></script>-->
 
 
 </body>
