@@ -1,9 +1,13 @@
 var scene3d = document.getElementById("scene3d");
-var CANVAS_WIDTH = 300;
-var CANVAS_HEIGHT = 300;
+var CANVAS_WIDTH = 500;
+var CANVAS_HEIGHT = 500;
 
 let scene, camera, renderer;
 var car;
+
+let loader = new THREE.GLTFLoader();
+
+
 function init() {
   scene = new THREE.Scene();
   scene.background = new THREE.Color(0x020715);
@@ -12,12 +16,22 @@ function init() {
 
   renderer = new THREE.WebGLRenderer({ canvas: scene3d, antialias: true });
   renderer.setSize(CANVAS_WIDTH, CANVAS_HEIGHT);
-  document.body.appendChild(renderer.domElement);
+  var next = document.getElementById("next-to-canvas");
+  next.appendChild(renderer.domElement);
 
 
   controls = new THREE.OrbitControls(camera, renderer.domElement);
   controls.autoRotate = true;
   controls.update();
+
+  loader.load('../assets/dragonbcn.glb', function (gltf) {
+    car = gltf.scene.children[0];
+    car.scale.set(1, 1, 1);
+    setTimeout(function () {
+      scene.add(gltf.scene);
+    }, 1000);
+    animate();
+  })
 
   directionalLight = new THREE.DirectionalLight(0xffffff, 3);
   directionalLight.position.set(0, 1, 0);
@@ -35,15 +49,6 @@ function init() {
   light4 = new THREE.PointLight(0xc4c4c4, 3);
   light4.position.set(-500, 300, 500);
   scene.add(light4);
-
-
-  let loader = new THREE.GLTFLoader();
-  loader.load('assets/dragonbcn.glb', function (gltf) {
-    car = gltf.scene.children[0];
-    car.scale.set(1, 1, 1);
-    scene.add(gltf.scene);
-    animate();
-  });
 }
 function animate() {
   requestAnimationFrame(animate);
@@ -53,4 +58,5 @@ function animate() {
 
   renderer.render(scene, camera);
 }
+
 init();
