@@ -51,6 +51,12 @@ a:focus {
   display: none;
 }
 
+@media screen and (max-width: 992px) {
+  #source-dragon {
+    display: block;
+  }
+}
+
 h1 {
   color: #2aa2a4;
   font-family: "Work Sans", sans-serif;
