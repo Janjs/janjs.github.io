@@ -1,3 +1,3 @@
-Can also use many CMS, but that can get boring. This website was made with pure HTML, CSS and JS.
+My personal portfolio website, made with simply HTML/CSS/JS,
 
-Check it: https://janjs.github.io/
+Check it out: https://janjs.github.io/
